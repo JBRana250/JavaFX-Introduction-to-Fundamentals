@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 
 public class App extends Application {
   private Scene scene;
@@ -22,7 +23,10 @@ public class App extends Application {
 
   @Override
   public void start(Stage stage) throws IOException {
-    scene = new Scene(loadFXML("counter"), 640, 480);
+    SceneManager.AddUi(AppUi.COUNTER, loadFXML("counter"));
+    SceneManager.AddUi(AppUi.MUSIC_PLAYER, loadFXML("musicplayer"));
+
+    scene = new Scene(SceneManager.getUiRoot(AppUi.COUNTER), 640, 480);
     stage.setScene(scene);
     stage.show();
   }
