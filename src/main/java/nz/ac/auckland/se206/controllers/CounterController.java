@@ -1,8 +1,13 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import nz.ac.auckland.se206.App;
 
 public class CounterController {
 
@@ -38,14 +43,20 @@ public class CounterController {
     }
 
     @FXML
-    private void switchScene() {
-
-    }
-
-    @FXML
     private void updateLabel() {
         numberLabel.setText(String.valueOf(count));
     }
 
+    @FXML
+    private void switchScene(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        Scene scene = button.getScene();
+
+        try {
+            scene.setRoot(App.loadFXML("musicplayer"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

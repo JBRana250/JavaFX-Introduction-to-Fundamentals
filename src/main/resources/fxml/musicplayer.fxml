@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MusicPlayerController">
+   <children>
+      <Pane prefHeight="540.0" prefWidth="630.0">
+         <children>
+            <Button fx:id="firstsongButton" layoutX="141.0" layoutY="260.0" mnemonicParsing="false" onAction="#playFirstSong" text="Play First Song" />
+            <Button fx:id="secondSongButton" layoutX="387.0" layoutY="260.0" mnemonicParsing="false" onAction="#playSecondSong" text="Play Second Song" />
+            <Button fx:id="switchButton" layoutX="490.0" layoutY="28.0" mnemonicParsing="false" onAction="#switchScene" text="Switch to Counter" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>
